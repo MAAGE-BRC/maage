@@ -1,5 +1,10 @@
 # gitignore for https://github.com/maage-brc/maage
 
+# lock files - ignored only when testing!
+# package-lock.json
+# pnpm-lock.yaml
+# yarn.lock
+
 # deps & packages
 node_modules/
 .yarn/
@@ -24,9 +29,15 @@ dump.rdb
 !.env.example
 
 # pm2
+# ecosystem.config.sample.js
 ecosystem.config.js
+ecosystem.config.local.js
+ecosystem.config.dev.js
+ecosystem.config.test.js
+ecosystem.config.prod.js
 
 # brc configs
+# p3-web.sample.conf
 p3-web.conf
 p3-web.conf-dev.maage
 p3-web.conf-test.maage
@@ -50,7 +61,6 @@ CLAUDE.md
 # windows
 Thumbs.db
 ehthumbs.db
-*.sublime-workspace
 desktop.ini
 $RECYCLE.BIN/
 System Volume Information/
@@ -104,9 +114,10 @@ NTUSER.INI
 # build
 dist/
 build/
-public/js/release/
-public/video/
-public/js/release/build-report.txt
+test/
+src/
+coverage/
+
 
 # testing & coverage
 coverage/
@@ -139,9 +150,6 @@ node_repl_history
 # misc
 gulpfile.js
 gulpified
-test/
-src/
-/public/js/p3/widget/UserDetails.js
 
 # TEMP - TO BE REMOVED
 package-lock.json
